@@ -1,0 +1,28 @@
+{
+  "name": "image-to-ascii",
+  "version": "0.0.0",
+  "description": "Node.js module that converts a PNG image to ASCII art.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/IonicaBizau/image-to-ascii.git"
+  },
+  "keywords": [
+    "ascii",
+    "image",
+    "png",
+    "node"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/image-to-ascii/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/image-to-ascii"
+}
