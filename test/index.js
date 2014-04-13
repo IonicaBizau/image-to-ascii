@@ -1,5 +1,7 @@
 var ImageToAscii = require ("../index")
-  , myImage = new ImageToAscii ()
+  , myImage = new ImageToAscii ({
+        resize: "h"
+    })
   ;
 
 myImage.convert(__dirname + "/octocat.png", function(err, converted) {

@@ -1,7 +1,7 @@
 // dependencies
 var fs = require('fs')
   , PNG = require('pngjs').PNG
-  , Convert = require('netpbm').convert
+  , ImageMagick = require("imagemagick")
   ;
 
 /**
@@ -11,19 +11,26 @@ var fs = require('fs')
 function convertToPng (options, callback) {
 
     // options that will be passed to convert function
-    var resizeOptions = {}
+    var resizeOptions = ""
       , tmpPath = "image-" + Math.random().toString(36) + ".png"
       ;
 
     // handle resize options
-    if (options.resize === "h") {
-        resizeOptions.width = process.stdout.columns;
-    } else if (options.resize === "w") {
-        resizeOptions.height = process.stdout.rows;
+    if (options.resize === "w") {
+        resizeOptions = process.stdout.columns + "x";
+    } else if (options.resize === "h") {
+        resizeOptions = "x" + process.stdout.rows;
+    } else {
+        return callback (null, options.imagePath);
     }
 
-    // convert
-    Convert (options.imagePath, tmpPath, resizeOptions, function(err) {
+    // convert the image
+    ImageMagick.convert([
+        options.imagePath
+      , '-resize'
+      , resizeOptions
+      , tmpPath
+    ], function(err, stdout){
 
         // handle error
         if (err) { return callback (err); }
@@ -155,6 +162,11 @@ var ImageToAscii = function (options) {
 
                         // add new line
                         converted += "\n";
+                    }
+
+                    // if the image
+                    if (imagePath !== tmpPath) {
+                        fs.unlink (tmpPath);
                     }
 
                     callback (null, converted);
