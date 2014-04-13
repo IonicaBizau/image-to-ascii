@@ -11,19 +11,19 @@ var fs = require('fs')
 function convertToPng (options, callback) {
 
     // options that will be passed to convert function
-    var options = {}
+    var resizeOptions = {}
       , tmpPath = "image-" + Math.random().toString(36) + ".png"
       ;
 
     // handle resize options
     if (options.resize === "h") {
-        options.width = process.stdout.columns;
+        resizeOptions.width = process.stdout.columns;
     } else if (options.resize === "w") {
-        options.height = process.stdout.rows;
+        resizeOptions.height = process.stdout.rows;
     }
 
     // convert
-    Convert (options.imagePath, tmpPath, function(err) {
+    Convert (options.imagePath, tmpPath, resizeOptions, function(err) {
 
         // handle error
         if (err) { return callback (err); }
