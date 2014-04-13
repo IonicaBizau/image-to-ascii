@@ -1,7 +1,37 @@
 // dependencies
 var fs = require('fs')
   , PNG = require('pngjs').PNG
+  , Convert = require('netpbm').convert
   ;
+
+/**
+ *  This function converts the image from options.imagePath to a png format.
+ *
+ */
+function convertToPng (options, callback) {
+
+    // options that will be passed to convert function
+    var options = {}
+      , tmpPath = "image-" + Math.random().toString(36) + ".png"
+      ;
+
+    // handle resize options
+    if (options.resize === "h") {
+        options.width = process.stdout.columns;
+    } else if (options.resize === "w") {
+        options.height = process.stdout.rows;
+    }
+
+    // convert
+    Convert (options.imagePath, tmpPath, function(err) {
+
+        // handle error
+        if (err) { return callback (err); }
+
+        // callback
+        callback (null, tmpPath);
+    });
+}
 
 /**
  *  ImageToAscii
@@ -94,31 +124,41 @@ var ImageToAscii = function (options) {
                 throw new Error ("Callback must be a function");
             }
 
-            // read the image
-            var stream = fs.createReadStream(imagePath).pipe(new PNG({ filterType: 4 }));
+            // convert to png and resize
+            convertToPng ({
+                imagePath: imagePath
+              , resize: options.resize
+            }, function (err, tmpPath) {
 
-            // image parsed
-            stream.on('parsed', function () {
+                // handle error
+                if (err) { return callback (err); }
 
-                // each pixel
-                for (var y = 0, converted = ""; y < this.height; y++) {
-                    for (var x = 0; x < this.width; x++) {
+                // read the image
+                var stream = fs.createReadStream(tmpPath).pipe(new PNG({ filterType: 4 }));
 
-                        // get the index, the sum of rgb and build the ASCII pixel
-                        var idx = (this.width * y + x) << 2
-                          , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
-                          , thisPixel = asciiPixels[Math.round(value / precision)]
-                          ;
+                // image parsed
+                stream.on("parsed", function () {
 
-                        // add the new pixel to the image
-                        converted += thisPixel;
+                    // each pixel
+                    for (var y = 0, converted = ""; y < this.height; y++) {
+                        for (var x = 0; x < this.width; x++) {
+
+                            // get the index, the sum of rgb and build the ASCII pixel
+                            var idx = (this.width * y + x) << 2
+                              , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
+                              , thisPixel = asciiPixels[Math.round(value / precision)]
+                              ;
+
+                            // add the new pixel to the image
+                            converted += thisPixel;
+                        }
+
+                        // add new line
+                        converted += "\n";
                     }
 
-                    // add new line
-                    converted += "\n";
-                }
-
-                callback (null, converted);
+                    callback (null, converted);
+                });
             });
         }
     }
