@@ -18,7 +18,7 @@ Node.js module that converts a PNG image to ASCII art.
 ## Example
 
 ```js
-var ImageToAscii = require ("../index")
+var ImageToAscii = require ("image-to-ascii")
   , myImage = new ImageToAscii ()
   ;
 
