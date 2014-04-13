@@ -41,16 +41,36 @@ var ImageToAscii = function (options) {
 
     // force options to be an object
     options = Object (options);
-    options.pixels = (String(options.pixels) || "@80GCLft1i;:,. ").split("");
+    options.pixels = (String(options.pixels || "") || " .,:;i1tfLCG08@").split("");
+    options.multiplyWidth = Number (options.multiplyWidth) || 2;
 
     // globals
     var precision = 765 / (options.pixels.length - 1)
-      , asciiPixels = []
+      , asciiPixels = options.pixels
       ;
 
-    // aspect ratio fix
-    for (var i = 0; i < options.pixels.length; ++i) {
-        asciiPixels.push(options.pixels[i] + options.pixels[i]);
+    // reverse pixels
+    if (options.reverse) {
+        options.pixels.reverse();
+    }
+
+    // multiply width
+    if (options.multiplyWidth) {
+
+        // empty the asciiPixels array
+        asciiPixels = [];
+
+        // aspect ratio fix
+        for (var i = 0; i < options.pixels.length; ++i) {
+
+            // how many times we need to multiply the pixel
+            for (var ii = 0, cPixel = ""; ii < options.multiplyWidth; ++ii) {
+                cPixel += options.pixels[i];
+            }
+
+            // push the pixel
+            asciiPixels.push(cPixel);
+        }
     }
 
     return {
