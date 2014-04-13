@@ -5,38 +5,92 @@ var fs = require('fs')
   ;
 
 /**
+ *  This function parses the resize object
+ *
+ */
+function processResize (resize) {
+
+    // initialize the value that will be
+    var finalResize = "";
+
+    // width is provided
+    if (typeof resize.width === "string") {
+
+        // parse integer
+        var value = parseInt (resize.width);
+
+        // handle percent values
+        if (resize.width.slice(-1) === "%") {
+            value = value * process.stdout.columns / 100;
+        }
+
+        // append the width value
+        finalResize += value + "x";
+    }
+
+    // height is provided
+    if (typeof resize.height === "string") {
+
+        // parse integer
+        var value = parseInt (resize.height);
+
+        // handle percent values
+        if (resize.height.slice(-1) === "%") {
+            value = value * process.stdout.rows / 100;
+        }
+
+        if (!finalResize) {
+            finalResize += "x";
+        }
+
+        // append the height
+        finalResize += value;
+
+        // both width and height were provided, don't keep aspect ratio
+        if (finalResize.split("x")[0]) {
+            finalResize += "!";
+        }
+    }
+
+    // finally return the final resize
+    return finalResize;
+}
+
+/**
  *  This function converts the image from options.imagePath to a png format.
  *
  */
 function convertToPng (options, callback) {
 
+    // force resize to be an object
+    options.resize = Object(options.resize);
+
     // options that will be passed to convert function
-    var resizeOptions = ""
-      , tmpPath = "image-" + Math.random().toString(36) + ".png"
-      ;
+    var tmpPath = "image-" + Math.random().toString(36) + ".png";
 
-    // handle resize options
-    if (options.resize === "w") {
-        resizeOptions = process.stdout.columns + "x";
-    } else if (options.resize === "h") {
-        resizeOptions = "x" + process.stdout.rows;
-    } else {
-        return callback (null, options.imagePath);
-    }
-
-    // convert the image
-    ImageMagick.convert([
-        options.imagePath
-      , '-resize'
-      , resizeOptions
-      , tmpPath
-    ], function(err, stdout){
+    // get the image size
+    ImageMagick.identify(options.imagePath, function (err, imageData){
 
         // handle error
         if (err) { return callback (err); }
 
-        // callback
-        callback (null, tmpPath);
+        // build the resize options
+        resizeOptions = processResize (options.resize) || (imageData.width + "x" + imageData.height);
+
+        // convert the image
+        ImageMagick.convert([
+            options.imagePath
+          , '-resize'
+          , resizeOptions
+          , tmpPath
+        ], function(err, stdout){
+
+            // handle error
+            if (err) { return callback (err); }
+
+            // callback
+            callback (null, tmpPath);
+        });
     });
 }
 
