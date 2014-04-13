@@ -101,7 +101,7 @@ var ImageToAscii = function (options) {
             stream.on('parsed', function () {
 
                 // each pixel
-                for (var y = 0, converted; y < this.height; y++) {
+                for (var y = 0, converted = ""; y < this.height; y++) {
                     for (var x = 0; x < this.width; x++) {
 
                         // get the index, the sum of rgb and build the ASCII pixel
