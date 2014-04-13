@@ -1,6 +1,9 @@
 var ImageToAscii = require ("../index")
   , myImage = new ImageToAscii ({
-        resize: "h"
+        resize: {
+            height: "80%"
+          , width: "50%"
+        }
     })
   ;
 

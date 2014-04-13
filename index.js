@@ -21,7 +21,7 @@ function processResize (resize) {
 
         // handle percent values
         if (resize.width.slice(-1) === "%") {
-            value = value * process.stdout.columns / 100;
+            value = Math.floor(value * process.stdout.columns / 100);
         }
 
         // append the width value
@@ -36,7 +36,7 @@ function processResize (resize) {
 
         // handle percent values
         if (resize.height.slice(-1) === "%") {
-            value = value * process.stdout.rows / 100;
+            value = Math.floor(value * process.stdout.rows / 100);
         }
 
         if (!finalResize) {
