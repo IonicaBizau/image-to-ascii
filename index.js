@@ -1,28 +1,107 @@
+// dependencies
 var fs = require('fs')
   , PNG = require('pngjs').PNG
-  , pixels = ("@80GCLft1i;:,. ").split("").reverse()
-  , precision = 765 / (pixels.length - 1)
-  , asciiPixels = []
   ;
 
-for (var i = 0; i < pixels.length; ++i) {
-    asciiPixels.push(pixels[i] + pixels[i]);
-}
+/**
+ *  ImageToAscii
+ *  Convert images to ASCII art strings.
+ *
+ *  ===============================
+ *  Licensed under the MIT license:
+ *  The MIT License (MIT)
+ *
+ *  Copyright (c) 2014 Ionică Bizău
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ *
+ */
+var ImageToAscii = function (options) {
 
-fs.createReadStream('./2864371.png').pipe(new PNG({ filterType: 4 })).on('parsed', function() {
-
-    for (var y = 0, converted; y < this.height; y++) {
-        for (var x = 0; x < this.width; x++) {
-            var idx = (this.width * y + x) << 2
-              , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2]
-              , thisPixel = asciiPixels[Math.round(value / precision)]
-              ;
-
-            converted += thisPixel;
-        }
-
-        converted += "\n";
+    // use 'new'
+    if (this.constructor !== ImageToAscii) {
+        throw new Error ("Use 'new' keyword to create the ImageToAscii instance");
     }
 
-    console.log(converted);
-});
+    // force options to be an object
+    options = Object (options);
+    options.pixels = (String(options.pixels) || "@80GCLft1i;:,. ").split("");
+
+    // globals
+    var precision = 765 / (options.pixels.length - 1)
+      , asciiPixels = []
+      ;
+
+    // aspect ratio fix
+    for (var i = 0; i < options.pixels.length; ++i) {
+        asciiPixels.push(options.pixels[i] + options.pixels[i]);
+    }
+
+    return {
+        /**
+         *  ImageToAscii#convert
+         *  Converts a png image to ASCII art
+         *
+         *  Arguments
+         *    @imagePath: the path to the PNG image
+         *    @callback: the callback function
+         *
+         */
+        convert: function (imagePath, callback) {
+
+            // force image path to be a string
+            imagePath = String (imagePath);
+
+            // force callback to be a function
+            callback = callback || function () {};
+            if (typeof callback !== "function") {
+                throw new Error ("Callback must be a function");
+            }
+
+            // read the image
+            var stream = fs.createReadStream(imagePath).pipe(new PNG({ filterType: 4 }));
+
+            // image parsed
+            stream.on('parsed', function () {
+
+                // each pixel
+                for (var y = 0, converted; y < this.height; y++) {
+                    for (var x = 0; x < this.width; x++) {
+
+                        // get the index, the sum of rgb and build the ASCII pixel
+                        var idx = (this.width * y + x) << 2
+                          , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2]
+                          , thisPixel = asciiPixels[Math.round(value / precision)]
+                          ;
+
+                        // add the new pixel to the image
+                        converted += thisPixel;
+                    }
+
+                    // add new line
+                    converted += "\n";
+                }
+
+                callback (null, converted);
+            });
+        }
+    }
+};
+
+module.exports = ImageToAscii;
