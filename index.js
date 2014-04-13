@@ -45,7 +45,7 @@ var ImageToAscii = function (options) {
     options.multiplyWidth = Number (options.multiplyWidth) || 2;
 
     // globals
-    var precision = 765 / (options.pixels.length - 1)
+    var precision = 1020 / (options.pixels.length - 1)
       , asciiPixels = options.pixels
       ;
 
@@ -106,7 +106,7 @@ var ImageToAscii = function (options) {
 
                         // get the index, the sum of rgb and build the ASCII pixel
                         var idx = (this.width * y + x) << 2
-                          , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2]
+                          , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
                           , thisPixel = asciiPixels[Math.round(value / precision)]
                           ;
 
