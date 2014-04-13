@@ -10,6 +10,9 @@ var fs = require('fs')
  */
 function processResize (resize) {
 
+    // get the instance
+    var self = this;
+
     // initialize the value that will be
     var finalResize = "";
 
@@ -21,7 +24,7 @@ function processResize (resize) {
 
         // handle percent values
         if (resize.width.slice(-1) === "%") {
-            value = Math.floor(value * process.stdout.columns / 100);
+            value = Math.floor(value * process.stdout.columns / (100 * self._options.multiplyWidth));
         }
 
         // append the width value
@@ -62,6 +65,9 @@ function processResize (resize) {
  */
 function convertToPng (options, callback) {
 
+    // get the instance
+    var self = this;
+
     // force resize to be an object
     options.resize = Object(options.resize);
 
@@ -75,7 +81,7 @@ function convertToPng (options, callback) {
         if (err) { return callback (err); }
 
         // build the resize options
-        resizeOptions = processResize (options.resize) || (imageData.width + "x" + imageData.height);
+        resizeOptions = processResize.call (self, options.resize) || (imageData.width + "x" + imageData.height);
 
         // convert the image
         ImageMagick.convert([
@@ -125,13 +131,16 @@ function convertToPng (options, callback) {
  */
 var ImageToAscii = function (options) {
 
+    // build the instance
+    var self = this;
+
     // use 'new'
     if (this.constructor !== ImageToAscii) {
         throw new Error ("Use 'new' keyword to create the ImageToAscii instance");
     }
 
     // force options to be an object
-    options = Object (options);
+    self._options = options = Object (options);
     options.pixels = (String(options.pixels || "") || " .,:;i1tfLCG08@").split("");
     options.multiplyWidth = Number (options.multiplyWidth) || 2;
 
@@ -186,7 +195,7 @@ var ImageToAscii = function (options) {
             }
 
             // convert to png and resize
-            convertToPng ({
+            convertToPng.call (self, {
                 imagePath: imagePath
               , resize: options.resize
             }, function (err, tmpPath) {
