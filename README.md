@@ -1,7 +1,7 @@
 Image to ASCII
 ==============
 
-Node.js module that converts a PNG image to ASCII art.
+Node.js module that converts an image to ASCII art.
 
 ## How to use
 
