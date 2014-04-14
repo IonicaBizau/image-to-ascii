@@ -3,6 +3,7 @@ var ImageToAscii = require ("../index")
         resize: {
             height: "100%"
           , width:  "50%"
+          , colored: true
         }
       , multiplyWidth: 1
     })
