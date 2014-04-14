@@ -10,6 +10,7 @@ Node.js module that converts a PNG image to ASCII art.
  - `pixels`: string representing the *ASCII pixels* in the brightness order. If not provided, the default value will be used: `" .,:;i1tfLCG08@"`
  - `multiplyWidth`: the width of the ASCII pixles. For keeping the aspect ratio in terminal, the default value is `2`
  - `reverse`: boolean value that indicates if the `pixels` value must be reversed. Default is `undefined`.
+ - `colored`: boolean value that indicates if the ASCII art must be colored or not. Default is `undefined`.
 
 ### `.convert (imagePath, callback)`
  - `imagePath`: the path to the PNG image
