@@ -34,6 +34,8 @@ myImage.convert(__dirname + "/octocat.png", function(err, converted) {
     console.log(err || converted);
 });
 ```
+[Baracktocat](https://octodex.github.com/baracktocat/) + `image-to-ascii` = Nice ASCII art :smiley:
+
 
 ## Test
 
