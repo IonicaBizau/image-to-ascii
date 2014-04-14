@@ -3,6 +3,7 @@ var fs = require('fs')
   , PNG = require('pngjs').PNG
   , ImageMagick = require("imagemagick")
   , Couleurs = require("couleurs")
+  , Request = require('request');
   ;
 
 /**
@@ -174,80 +175,96 @@ var ImageToAscii = function (options) {
         }
     }
 
-    return {
-        /**
-         *  ImageToAscii#convert
-         *  Converts a png image to ASCII art
-         *
-         *  Arguments
-         *    @imagePath: the path to the PNG image
-         *    @callback: the callback function
-         *
-         */
-        convert: function (imagePath, callback) {
+    /**
+     *  ImageToAscii#convert
+     *  Converts a png image to ASCII art
+     *
+     *  Arguments
+     *    @imagePath: the path to the PNG image
+     *    @callback: the callback function
+     *
+     */
+    self.convert = function (imagePath, callback) {
 
-            // force image path to be a string
-            imagePath = String (imagePath);
+        // force image path to be a string
+        imagePath = String (imagePath);
 
-            // force callback to be a function
-            callback = callback || function () {};
-            if (typeof callback !== "function") {
-                throw new Error ("Callback must be a function");
-            }
+        // force callback to be a function
+        callback = callback || function () {};
+        if (typeof callback !== "function") {
+            throw new Error ("Callback must be a function");
+        }
 
-            // convert to png and resize
-            convertToPng.call (self, {
-                imagePath: imagePath
-              , resize: options.resize
-            }, function (err, tmpPath) {
+        // the string begins with https or http
+        if (/^https?:\/\//.test(imagePath)) {
 
-                // handle error
-                if (err) { return callback (err); }
+            // generate a tmp path
+            var tmpPath = "image-" + Math.random().toString(36);
 
-                // read the image
-                var stream = fs.createReadStream(tmpPath).pipe(new PNG({ filterType: 4 }));
+            // download the image
+            Request(imagePath)
+                .pipe(fs.createWriteStream(tmpPath))
+                .on('close', function () {
+                    self.convert (tmpPath, function (err, data) {
+                        callback (err, data);
+                        fs.unlink (tmpPath);
+                    });
+                });
+            return;
+        }
 
-                // image parsed
-                stream.on("parsed", function () {
+        // convert to png and resize
+        convertToPng.call (self, {
+            imagePath: imagePath
+          , resize: options.resize
+        }, function (err, tmpPath) {
 
-                    // each pixel
-                    for (var y = 0, converted = ""; y < this.height; y++) {
-                        for (var x = 0; x < this.width; x++) {
+            // handle error
+            if (err) { return callback (err); }
 
-                            // get the index, the sum of rgb and build the ASCII pixel
-                            var idx = (this.width * y + x) << 2
-                              , rgba = {
-                                    r: this.data[idx]
-                                  , g: this.data[idx + 1]
-                                  , a: this.data[idx + 2]
-                                  , o: this.data[idx + 3]
-                                }
-                              , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
-                              , thisPixel = asciiPixels[Math.round(value / precision)]
-                              ;
+            // read the image
+            var stream = fs.createReadStream(tmpPath).pipe(new PNG({ filterType: 4 }));
 
-                            // handle colored
-                            if (options.colored) {
-                                thisPixel = thisPixel.rgb (rgba.r, rgba.g, rgba.a);
+            // image parsed
+            stream.on("parsed", function () {
+
+                // each pixel
+                for (var y = 0, converted = ""; y < this.height; y++) {
+                    for (var x = 0; x < this.width; x++) {
+
+                        // get the index, the sum of rgb and build the ASCII pixel
+                        var idx = (this.width * y + x) << 2
+                          , rgba = {
+                                r: this.data[idx]
+                              , g: this.data[idx + 1]
+                              , a: this.data[idx + 2]
+                              , o: this.data[idx + 3]
                             }
+                          , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
+                          , thisPixel = asciiPixels[Math.round(value / precision)]
+                          ;
 
-                            // add the new pixel to the image
-                            converted += thisPixel;
+                        // handle colored
+                        if (options.colored) {
+                            thisPixel = thisPixel.rgb (rgba.r, rgba.g, rgba.a);
                         }
 
-                        // add new line
-                        converted += "\n";
+                        // add the new pixel to the image
+                        converted += thisPixel;
                     }
 
-                    // if the image
-                    if (imagePath !== tmpPath) {
-                        fs.unlink (tmpPath);
-                    }
+                    // add new line
+                    converted += "\n";
+                }
 
-                    callback (null, converted);
-                });
+                // if the image
+                if (imagePath !== tmpPath) {
+                    fs.unlink (tmpPath);
+                }
+
+                callback (null, converted);
             });
-        }
+        });
     }
 };
 

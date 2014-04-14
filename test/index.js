@@ -9,6 +9,6 @@ var ImageToAscii = require ("../index")
     })
   ;
 
-myImage.convert(__dirname + "/octocat.png", function(err, converted) {
+myImage.convert("https://octodex.github.com/images/baracktocat.jpg", function(err, converted) {
     console.log(err || converted);
 });
