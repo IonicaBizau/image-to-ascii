@@ -227,7 +227,7 @@ var ImageToAscii = function (options) {
                               ;
 
                             // handle colored
-                            if (!options.colored) {
+                            if (options.colored) {
                                 thisPixel = thisPixel.rgb (rgba.r, rgba.g, rgba.a);
                             }
 
