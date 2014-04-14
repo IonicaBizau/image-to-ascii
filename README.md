@@ -44,6 +44,9 @@ myImage.convert(__dirname + "/octocat.png", function(err, converted) {
 
 ## Changelog
 
+### `v0.1.1`
+ - Added support for images from Internet
+
 ### `v0.1.0`
  - Initial version
 
