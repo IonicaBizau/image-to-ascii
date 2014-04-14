@@ -2,6 +2,7 @@
 var fs = require('fs')
   , PNG = require('pngjs').PNG
   , ImageMagick = require("imagemagick")
+  , Couleurs = require("couleurs")
   ;
 
 /**
@@ -24,7 +25,7 @@ function processResize (resize) {
 
         // handle percent values
         if (resize.width.slice(-1) === "%") {
-            value = Math.floor(value * process.stdout.columns / (100 * self._options.multiplyWidth));
+            value = Math.floor(value * (process.stdout.columns || 239) / (100 * self._options.multiplyWidth));
         }
 
         // append the width value
@@ -39,7 +40,7 @@ function processResize (resize) {
 
         // handle percent values
         if (resize.height.slice(-1) === "%") {
-            value = Math.floor(value * process.stdout.rows / 100);
+            value = Math.floor(value *( process.stdout.rows || 60) / 100);
         }
 
         if (!finalResize) {
@@ -215,9 +216,20 @@ var ImageToAscii = function (options) {
 
                             // get the index, the sum of rgb and build the ASCII pixel
                             var idx = (this.width * y + x) << 2
+                              , rgba = {
+                                    r: this.data[idx]
+                                  , g: this.data[idx + 1]
+                                  , a: this.data[idx + 2]
+                                  , o: this.data[idx + 3]
+                                }
                               , value = this.data[idx] + this.data[idx + 1] + this.data[idx + 2] + this.data[idx + 3]
                               , thisPixel = asciiPixels[Math.round(value / precision)]
                               ;
+
+                            // handle colored
+                            if (!options.colored) {
+                                thisPixel = thisPixel.rgb (rgba.r, rgba.g, rgba.a);
+                            }
 
                             // add the new pixel to the image
                             converted += thisPixel;
