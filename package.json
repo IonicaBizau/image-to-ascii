@@ -1,6 +1,6 @@
 {
   "name": "image-to-ascii",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Node.js module that converts a PNG image to ASCII art.",
   "main": "index.js",
   "directories": {
