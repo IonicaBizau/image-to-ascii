@@ -5,6 +5,10 @@ Node.js module that converts an image to ASCII art.
 
 ## How to use
 
+First download and install [ImageMagick](http://www.imagemagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
+
+    brew install imagemagick
+
 ### Constructor: `new ImageToAscii (options)`
 `options` is an object containing the following fields:
  - `pixels`: string representing the *ASCII pixels* in the brightness order. If not provided, the default value will be used: `" .,:;i1tfLCG08@"`
