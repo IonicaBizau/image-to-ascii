@@ -7,7 +7,7 @@ var ImageToAscii = require ("../index")
     })
   ;
 
-myImage.convert("./out.jpeg", function(err, converted) {
+myImage.convert(__dirname + "/octocat.png", function(err, converted) {
     process.stdout.cursorTo(0, 0);
     process.stdout.write(converted);
 });
