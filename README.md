@@ -1,58 +1,53 @@
-Image to ASCII
+Image to Ascii
 ==============
+A Node.JS module that converts images to ASCII art.
 
-Node.js module that converts an image to ASCII art.
-
-## How to use
-
-First download and install [ImageMagick](http://www.imagemagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
-
-    brew install imagemagick
-
-### Constructor: `new ImageToAscii (options)`
-`options` is an object containing the following fields:
- - `pixels`: string representing the *ASCII pixels* in the brightness order. If not provided, the default value will be used: `" .,:;i1tfLCG08@"`
- - `multiplyWidth`: the width of the ASCII pixles. For keeping the aspect ratio in terminal, the default value is `2`
- - `reverse`: boolean value that indicates if the `pixels` value must be reversed. Default is `undefined`.
- - `colored`: boolean value that indicates if the ASCII art must be colored or not. Default is `undefined`.
-
-### `.convert (imagePath, callback)`
- - `imagePath`: the path to the PNG image
- - `callback`: the callback function
-
-## Example
-
-```js
-var ImageToAscii = require ("../index")
-  , myImage = new ImageToAscii ({
-        resize: {
-            height: "100%"
-          , width:  "50%"
-        }
-      , multiplyWidth: 1
-      , colored: true
-    })
-  ;
-
-myImage.convert(__dirname + "/octocat.png", function(err, converted) {
-    console.log(err || converted);
-});
+# Installation
+```sh
+$ npm install image-to-ascii
 ```
-[Baracktocat](https://octodex.github.com/baracktocat/) + `image-to-ascii` = Nice ASCII art :smiley:
+
+# Documentation
+## `ImageToAscii(options, callback)`
+Converts the provided image in ASCII art.
+
+### Params
+- **Object|String** `options`: The path to the image or an object containing the following fields:
+ - `path` (String): The path to the image.
+ - `pixels` (String|Array): The pixels that will be used to render the ASCII image (default: `" .,:;i1tfLCG08@"`).
+ - `pxWidth` (Number): The pixel width used for aspect ratio (default: `2`).
+ - `reverse` (Boolean): If `true`, the pixels will be reversed (default: `false`).
+ - `colored` (Boolean): If `true`, the result will be colored (default: `true`).
+ - `aRatio` (Boolean): If `true`, the aspect ratio will be kept (default: `false`).
+ - `size` (Object): The size of the result image (ASCII art):
+    - `height` (Number|String): The height value (default: `"100%"`).
+    - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
+
+- **Function** `callback`: The callback function.
 
 
-## Test
+# How to contribute
+1. File an issue in the repository, using the bug tracker, describing the
+   contribution you'd like to make. This will help us to get you started on the
+   right foot.
+2. Fork the project in your account and create a new branch:
+   `your-great-feature`.
+3. Commit your changes in that branch.
+4. Open a pull request, and reference the initial issue in the pull request
+   message.
 
-> [![](http://i.imgur.com/piG4iMu.png)](https://asciinema.org/a/8881)
+# Changelog
+## 1.0.0
+ - First stable release.
+ - Refactored code.
+ - Use Graphics Magick instead of Image Magick.
+ - Configuration format changed.
 
+## v0.1.1
+ - Added support for remote images.
 
-## Changelog
+## v0.1.1
+ - Initial release.
 
-### `v0.1.1`
- - Added support for images from Internet
-
-### `v0.1.0`
- - Initial version
-
-## License
-See LICENSE file
+# License
+See the [LICENSE](./LICENSE) file.
