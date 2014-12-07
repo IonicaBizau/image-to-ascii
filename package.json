@@ -20,6 +20,9 @@
     "node"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "contributors": [
+      "Eric Baer <me@ericbaer.com> https://twitter.com/asoftwaredev"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/image-to-ascii/issues"
