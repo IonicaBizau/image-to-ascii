@@ -1,13 +1,5 @@
-var ImageToAscii = require ("../index")
-  , myImage = new ImageToAscii ({
-        resize: {
-            height: "100%"
-        }
-      , colored: true
-    })
-  ;
+var ImageToAscii = require("../lib/index");
 
-myImage.convert(__dirname + "/octocat.png", function(err, converted) {
-    process.stdout.cursorTo(0, 0);
-    process.stdout.write(converted);
+ImageToAscii(__dirname + "/octocat.png", function(err, converted) {
+    console.log(err || converted);
 });
