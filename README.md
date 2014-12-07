@@ -58,6 +58,9 @@ Converts the provided image in ASCII art.
    message.
 
 # Changelog
+## 1.1.0
+ - Do not `trim` the result string.
+
 ## 1.0.0
  - First stable release.
  - Refactored code.

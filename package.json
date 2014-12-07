@@ -1,6 +1,6 @@
 {
   "name": "image-to-ascii",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Node.JS module that converts images to ASCII art.",
   "main": "lib/index.js",
   "directories": {
@@ -21,7 +21,7 @@
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com>",
   "contributors": [
-      "Eric Baer <me@ericbaer.com> https://twitter.com/asoftwaredev"
+    "Eric Baer <me@ericbaer.com> https://twitter.com/asoftwaredev"
   ],
   "license": "MIT",
   "bugs": {
