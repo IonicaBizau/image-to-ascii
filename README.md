@@ -3,6 +3,15 @@ Image to Ascii
 A Node.JS module that converts images to ASCII art.
 
 # Installation
+Install [Graphics Magick](http://www.graphicsmagick.org/).
+
+```sh
+$ sudo apt-get install graphicsmagick
+$ brew install graphicsmagick
+```
+
+Then you can use this library.
+
 ```sh
 $ npm install image-to-ascii
 ```
