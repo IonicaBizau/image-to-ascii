@@ -7,6 +7,18 @@ A Node.JS module that converts images to ASCII art.
 $ npm install image-to-ascii
 ```
 
+# Example
+
+```js
+var ImageToAscii = require("../lib/index");
+
+ImageToAscii(__dirname + "/octocat.png", function(err, converted) {
+    console.log(err || converted);
+});
+```
+
+![Example](http://i.imgur.com/sjowkpL.png)
+
 # Documentation
 ## `ImageToAscii(options, callback)`
 Converts the provided image in ASCII art.
