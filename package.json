@@ -1,8 +1,8 @@
 {
   "name": "image-to-ascii",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A Node.JS module that converts images to ASCII art.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
