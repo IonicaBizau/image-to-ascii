@@ -8,6 +8,10 @@ Install [Graphics Magick](http://www.graphicsmagick.org/).
 ```sh
 $ sudo apt-get install graphicsmagick
 $ brew install graphicsmagick
+
+# Chocolatey (package manager for Windows)
+# (Restart of cmd/PowerShell is required)
+$ choco install graphicsmagick
 ```
 
 Then you can use this library.
