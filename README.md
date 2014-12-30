@@ -1,4 +1,4 @@
-Image to Ascii
+Image to ASCII
 ==============
 A Node.JS module that converts images to ASCII art.
 
