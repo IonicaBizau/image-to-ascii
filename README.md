@@ -6,7 +6,10 @@ A Node.JS module that converts images to ASCII art.
 Install [Graphics Magick](http://www.graphicsmagick.org/).
 
 ```sh
+# Ubuntu
 $ sudo apt-get install graphicsmagick
+
+# OS X
 $ brew install graphicsmagick
 
 # Chocolatey (package manager for Windows)
