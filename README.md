@@ -62,23 +62,7 @@ Converts the provided image in ASCII art.
    message.
 
 # Changelog
-## 1.2.0
- - Do not modify the default settings after first call.
-
-## 1.1.0
- - Do not `trim` the result string.
-
-## 1.0.0
- - First stable release.
- - Refactored code.
- - Use Graphics Magick instead of Image Magick.
- - Configuration format changed.
-
-## v0.1.1
- - Added support for remote images.
-
-## v0.1.1
- - Initial release.
+See the [releases page](https://github.com/IonicaBizau/image-to-ascii/releases).
 
 # License
 See the [LICENSE](./LICENSE) file.
