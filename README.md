@@ -9,6 +9,9 @@ Install [Graphics Magick](http://www.graphicsmagick.org/).
 # Ubuntu
 $ sudo apt-get install graphicsmagick
 
+# Fedora    
+$ sudo dnf install GraphicsMagick
+
 # OS X
 $ brew install graphicsmagick
 
