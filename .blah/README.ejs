@@ -13,14 +13,37 @@
 <!-- * * * Thanks! * * *                                                    -->
 <!---------------------------------------------------------------------------->
 
-![image-to-ascii](http://i.imgur.com/pKydY5P.png)
 
-# image-to-ascii [![Donate now][donate-now]][paypal-donations]
+<% // Dependencies %>
+<% var IsThere = require("is-there"); %>
+<% var Fs = require("fs"); %>
+<% var Path = require("path"); %>
+<% var Ul = require("ul"); %>
 
-A Node.JS module that converts images to ASCII art.
+<% // Compute the directory paths %>
+<% var binPath = Path.join(_.path, "bin"); %>
+<% var examplesPath = Path.join(_.path, "examples"); %>
+<% var examplePath = Path.join(_.path, "example"); %>
+<% var example = IsThere(examplePath) ? examplePath : IsThere(examplesPath) ? examplesPath : null; %>
+<% var isCli = IsThere(binPath); %>
 
-![image-to-ascii](http://i.imgur.com/sjowkpL.png)
+<% if (_.pack.blah.h_img) { %>
+![<%- _.pack.name %>](<%- _.pack.blah.h_img %>)
+<% } %>
 
+<% // Create the name and description %>
+<% if (isCli) { %>
+# `$ <%- _.pack.name %>` [![Donate now][donate-now]][paypal-donations]
+<% } else { %>
+# <%- _.pack.name %> [![Donate now][donate-now]][paypal-donations]
+<% } %>
+<%- _.pack.description %>
+
+<% if (_.pack.blah.ex_img) { %>
+![<%- _.pack.name %>](<%-_.pack.blah.ex_img %>)
+<% } %>
+
+<% // INSTALLATION %>
 ## Installation
 
 Install [Graphics Magick](http://www.graphicsmagick.org/).
@@ -43,20 +66,40 @@ $ choco install graphicsmagick
 Then, you can install this package:
 
 ```sh
-$ npm i image-to-ascii
+$ npm i <%- _.pack.name %>
 ```
 
+<% // Cli usage %>
+<% if (isCli) { %>
+### CLI Usage
+You can install the package globally and use it as command line tool:
+
+```sh
+$ npm i -g <%- _.pack.name %>
+```
+
+Then, run `<%- _.pack.name %> --help` and see what the cli tool can do.
+
+<% } %>
+
+<% // Show the example if there is one %>
+<% if (example) { %>
+<% var exStrPath = Path.join(example, "index.js"); %>
+<% if (!IsThere(exStrPath)) { %>
+<%   example = null; %>
+<% } %>
+<% if (example) { %>
 ## Example
 
+<% if (isCli) { %>
+Here is an example how to use this package as library.
+<% } %>
+
+<% var exStr = Fs.readFileSync(exStrPath, "utf-8"); %>
+<% exStr = exStr.replace("../lib", _.pack.name) %>
+
 ```js
-// Dependencies
-var ImageToAscii = require("image-to-ascii");
-
-// Convert to ascii this image
-ImageToAscii(__dirname + "/octocat.png", function(err, converted) {
-    console.log(err || converted);
-});
-
+<%- exStr %>
 ```
 
 In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
@@ -71,35 +114,29 @@ To run the script just use:
 ```sh
 sh webcam.sh
 ```
+<% } %>
+<% } %>
 
+<% // Documentation %>
 ## Documentation
 
-### `ImageToAscii(options, callback)`
-Converts the provided image in ASCII art.
+<% if (isCli) { %>
+For full API reference, see the [DOCUMENTATION.md][docs] file.
+<% } else { %>
+<% docs = docs.split("\n").slice(3).join("\n"); %>
+<%- docs %>
+<% } %>
 
-#### Params
-- **Object|String** `options`: The path to the image or an object containing the following fields:
- - `path` (String): The path to the image.
- - `pixels` (String|Array): The pixels that will be used to render the ASCII image (default: `" .,:;i1tfLCG08@"`).
- - `pxWidth` (Number): The pixel width used for aspect ratio (default: `2`).
- - `reverse` (Boolean): If `true`, the pixels will be reversed (default: `false`).
- - `colored` (Boolean): If `true`, the result will be colored (default: `true`).
- - `aRatio` (Boolean): If `true`, the aspect ratio will be kept (default: `false`).
- - `size` (Object): The size of the result image (ASCII art):
-    - `height` (Number|String): The height value (default: `"100%"`).
-    - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
-- **Function** `callback`: The callback function.
-
-#### Return
-- ****
-
+<% // How to contribute %>
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+<% // License information %>
 ## License
 [KINDLY][license] © [Ionică Bizău][website]–The [LICENSE](/LICENSE) file contains
 a copy of the license.
 
+<% // Links %>
 [license]: http://ionicabizau.github.io/kindly-license/?author=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica@gmail.com%3E&year=2015
 [contributing]: /CONTRIBUTING.md
 [website]: http://ionicabizau.net
