@@ -31,10 +31,10 @@
   },
   "homepage": "https://github.com/IonicaBizau/image-to-ascii",
   "dependencies": {
-    "couleurs": "2.0.0",
-    "gm": "1.17.0",
+    "couleurs": "^5.0.0",
+    "gm": "^1.18.1",
     "pngjs": "0.4.0",
-    "request": "2.49.0",
+    "request": "^2.61.0",
     "tmp": "0.0.27"
   },
   "devDependencies": {}
