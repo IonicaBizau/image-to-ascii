@@ -9,7 +9,7 @@ Install [Graphics Magick](http://www.graphicsmagick.org/).
 # Ubuntu
 $ sudo apt-get install graphicsmagick
 
-# Fedora    
+# Fedora
 $ sudo dnf install GraphicsMagick
 
 # OS X
@@ -24,6 +24,17 @@ Then you can use this library.
 
 ```sh
 $ npm install image-to-ascii
+```
+
+In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
+
+```sh
+# Ubuntu
+$ sudo apt-get install streamer
+```
+```sh
+# To run the script just use
+sh webcam.sh
 ```
 
 # Example

@@ -1,4 +1,4 @@
 while true; do
     streamer -f jpeg -o out.jpeg -q
-    node index
+    node webcam.js
 done
