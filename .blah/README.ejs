@@ -39,10 +39,6 @@
 <% } %>
 <%- _.pack.description %>
 
-<% if (_.pack.blah.ex_img) { %>
-![<%- _.pack.name %>](<%-_.pack.blah.ex_img %>)
-<% } %>
-
 <% // INSTALLATION %>
 ## Installation
 
@@ -80,6 +76,10 @@ $ npm i -g <%- _.pack.name %>
 
 Then, run `<%- _.pack.name %> --help` and see what the cli tool can do.
 
+<% } %>
+
+<% if (_.pack.blah.ex_img) { %>
+![<%- _.pack.name %>](<%-_.pack.blah.ex_img %>)
 <% } %>
 
 <% // Show the example if there is one %>

@@ -19,8 +19,6 @@
 
 A Node.JS module that converts images to ASCII art.
 
-![image-to-ascii](http://i.imgur.com/sjowkpL.png)
-
 ## Installation
 
 Install [Graphics Magick](http://www.graphicsmagick.org/).
@@ -45,6 +43,8 @@ Then, you can install this package:
 ```sh
 $ npm i image-to-ascii
 ```
+
+![image-to-ascii](http://i.imgur.com/sjowkpL.png)
 
 ## Example
 
