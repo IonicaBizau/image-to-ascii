@@ -90,9 +90,6 @@ Converts the provided image in ASCII art.
     - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
 - **Function** `callback`: The callback function.
 
-#### Return
-- ****
-
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
