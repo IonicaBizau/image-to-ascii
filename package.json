@@ -19,7 +19,7 @@
     "png",
     "node"
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
   "contributors": [
     "Eric Baer <me@ericbaer.com>",
     "ComFreek <comfreek@outlook.com>",
@@ -40,6 +40,66 @@
   "devDependencies": {},
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
-    "ex_img": "http://i.imgur.com/sjowkpL.png"
+    "ex_img": "http://i.imgur.com/sjowkpL.png",
+    "show_installation": false,
+    "installation": [
+      {
+        "h2": "Installation"
+      },
+      {
+        "p": "Install [Graphics Magick](http://www.graphicsmagick.org/)."
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": [
+            "# Ubuntu",
+            "$ sudo apt-get install graphicsmagick",
+            "",
+            "# Fedora",
+            "$ sudo dnf install GraphicsMagick",
+            "",
+            "# OS X",
+            "$ brew install graphicsmagick",
+            "",
+            "# Chocolatey (package manager for Windows)",
+            "# (Restart of cmd/PowerShell is required)",
+            "$ choco install graphicsmagick"
+          ]
+        }
+      },
+      {
+        "p": "Then, you can install this package:"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "$ npm i image-to-ascii"
+        }
+      }
+    ],
+    "example": [
+      {
+        "p": "In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": [
+            "# Ubuntu",
+            "$ sudo apt-get install streamer"
+          ]
+        }
+      },
+      {
+        "p": "To run the script just use:"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "sh webcam.sh"
+        }
+      }
+    ]
   }
 }
