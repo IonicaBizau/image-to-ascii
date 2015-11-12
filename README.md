@@ -1,6 +1,7 @@
 [![image-to-ascii](http://i.imgur.com/pKydY5P.png)](#)
 
 # image-to-ascii [![Support this project][donate-now]][paypal-donations]
+
 A Node.JS module that converts images to ASCII art.
 
 [![image-to-ascii](http://i.imgur.com/sjowkpL.png)](#)
