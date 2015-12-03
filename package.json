@@ -1,6 +1,6 @@
 {
   "name": "image-to-ascii",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A Node.JS module that converts images to ASCII art.",
   "main": "lib/index.js",
   "directories": {
@@ -25,7 +25,7 @@
     "ComFreek <comfreek@outlook.com>",
     "Szabo Cristian"
   ],
-  "license": "KINDLY",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/image-to-ascii/issues"
   },
