@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node example/index.js"
   },
   "repository": {
     "type": "git",
@@ -80,7 +80,7 @@
     ],
     "example": [
       {
-        "p": "In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`"
+        "p": "In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`"
       },
       {
         "code": {
