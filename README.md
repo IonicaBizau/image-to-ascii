@@ -38,12 +38,12 @@ $ npm i image-to-ascii
 var ImageToAscii = require("image-to-ascii");
 
 // Convert to ascii this image
-ImageToAscii(__dirname + "/octocat.png", function(err, converted) {
+ImageToAscii("https://scontent-fra3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/10171857_956002364413311_4523194503692702568_n.jpg?oh=3c07329ae90e10be00d0552e86b91571&oe=56DB376A", function(err, converted) {
     console.log(err || converted);
 });
 ```
 
-In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
+In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
 
 ```sh
 # Ubuntu
@@ -69,10 +69,10 @@ Converts the provided image in ASCII art.
  - `reverse` (Boolean): If `true`, the pixels will be reversed (default: `false`).
  - `colored` (Boolean): If `true`, the result will be colored (default: `true`).
  - `aRatio` (Boolean): If `true`, the aspect ratio will be kept (default: `false`).
+ - `imageMagick` (Boolean): If `true`, ImageMagick will be used instead of `GraphicsMagick` (default: `false`).
  - `size` (Object): The size of the result image (ASCII art):
     - `height` (Number|String): The height value (default: `"100%"`).
     - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
- - `imageMagick` (Boolean): If `true`, ImageMagick will be used instead of `GraphicsMagick` (default: `false`).
 - **Function** `callback`: The callback function.
 
 ## How to contribute
@@ -91,9 +91,17 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)
 
+ - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) by yutou
+
  - [`imgurize`](https://github.com/mkaminsky11/imgurize) by Michael Kaminsky
 
  - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)
+
+ - [`js2image`](https://github.com/xinyu198736/image-to-js#readme) by yutou
+
+ - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) by Hans Kristian Flaatten
+
+ - [`salestock-cli`](https://npmjs.com/package/salestock-cli) by Muhammad Mustadi
 
  - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)
 
