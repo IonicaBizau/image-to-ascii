@@ -72,6 +72,7 @@ Converts the provided image in ASCII art.
  - `size` (Object): The size of the result image (ASCII art):
     - `height` (Number|String): The height value (default: `"100%"`).
     - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
+ - `imageMagick` (Boolean): If `true`, ImageMagick will be used instead of `GraphicsMagick` (default: `false`).
 - **Function** `callback`: The callback function.
 
 ## How to contribute
