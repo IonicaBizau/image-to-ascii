@@ -35,10 +35,10 @@ $ npm i image-to-ascii
 
 ```js
 // Dependencies
-var ImageToAscii = require("image-to-ascii");
+const ImageToAscii = require("image-to-ascii");
 
 // Convert to ascii this image
-ImageToAscii("https://scontent-fra3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/10171857_956002364413311_4523194503692702568_n.jpg?oh=3c07329ae90e10be00d0552e86b91571&oe=56DB376A", function(err, converted) {
+ImageToAscii(`${__dirname}/octocat.png`, function(err, converted) {
     console.log(err || converted);
 });
 ```
