@@ -1,8 +1,8 @@
 [![image-to-ascii](http://i.imgur.com/pKydY5P.png)](#)
 
-# image-to-ascii [![Support this project][donate-now]][paypal-donations]
+# image-to-ascii [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-A Node.JS module that converts images to ASCII art.
+> A Node.JS module that converts images to ASCII art.
 
 [![image-to-ascii](http://i.imgur.com/sjowkpL.png)](#)
 
