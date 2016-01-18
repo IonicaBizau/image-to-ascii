@@ -1,8 +1,13 @@
-Image to ASCII
-==============
-A Node.JS module that converts images to ASCII art.
+[![image-to-ascii](http://i.imgur.com/pKydY5P.png)](#)
 
-# Installation
+# image-to-ascii [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+
+> A Node.JS module that converts images to ASCII art.
+
+[![image-to-ascii](http://i.imgur.com/sjowkpL.png)](#)
+
+## Installation
+
 Install [Graphics Magick](http://www.graphicsmagick.org/).
 
 ```sh
@@ -20,40 +25,43 @@ $ brew install graphicsmagick
 $ choco install graphicsmagick
 ```
 
-Then you can use this library.
+Then, you can install this package:
 
 ```sh
-$ npm install image-to-ascii
+$ npm i image-to-ascii
 ```
 
-In order to run the `webcam.sh` provided in the `test` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
+## Example
+
+```js
+// Dependencies
+const ImageToAscii = require("image-to-ascii");
+
+// Convert to ascii this image
+ImageToAscii(`${__dirname}/octocat.png`, function(err, converted) {
+    console.log(err || converted);
+});
+```
+
+In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
 
 ```sh
 # Ubuntu
 $ sudo apt-get install streamer
 ```
+
+To run the script just use:
+
 ```sh
-# To run the script just use
 sh webcam.sh
 ```
 
-# Example
+## Documentation
 
-```js
-var ImageToAscii = require("image-to-ascii");
-
-ImageToAscii(__dirname + "/octocat.png", function(err, converted) {
-    console.log(err || converted);
-});
-```
-
-![Example](http://i.imgur.com/sjowkpL.png)
-
-# Documentation
-## `ImageToAscii(options, callback)`
+### `ImageToAscii(options, callback)`
 Converts the provided image in ASCII art.
 
-### Params
+#### Params
 - **Object|String** `options`: The path to the image or an object containing the following fields:
  - `path` (String): The path to the image.
  - `pixels` (String|Array): The pixels that will be used to render the ASCII image (default: `" .,:;i1tfLCG08@"`).
@@ -61,25 +69,50 @@ Converts the provided image in ASCII art.
  - `reverse` (Boolean): If `true`, the pixels will be reversed (default: `false`).
  - `colored` (Boolean): If `true`, the result will be colored (default: `true`).
  - `aRatio` (Boolean): If `true`, the aspect ratio will be kept (default: `false`).
+ - `imageMagick` (Boolean): If `true`, ImageMagick will be used instead of `GraphicsMagick` (default: `false`).
  - `size` (Object): The size of the result image (ASCII art):
     - `height` (Number|String): The height value (default: `"100%"`).
     - `width` (Number|String): The width value (default: computed value to keep aspect ratio).
-
 - **Function** `callback`: The callback function.
 
+## How to contribute
+Have an idea? Found a bug? See [how to contribute][contributing].
 
-# How to contribute
-1. File an issue in the repository, using the bug tracker, describing the
-   contribution you'd like to make. This will help us to get you started on the
-   right foot.
-2. Fork the project in your account and create a new branch:
-   `your-great-feature`.
-3. Commit your changes in that branch.
-4. Open a pull request, and reference the initial issue in the pull request
-   message.
+## Where is this library used?
+If you are using this library in one of your projects, add it in this list. :sparkles:
 
-# Changelog
-See the [releases page](https://github.com/IonicaBizau/image-to-ascii/releases).
+ - [`alphabet-cli`](https://github.com/joliveros/alphabet-cli#readme)
 
-# License
-See the [LICENSE](./LICENSE) file.
+ - [`ascii-github`](https://npmjs.com/package/ascii-github)
+
+ - [`cli-github`](https://github.com/IonicaBizau/cli-github)
+
+ - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)
+
+ - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)
+
+ - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) by yutou
+
+ - [`imgurize`](https://github.com/mkaminsky11/imgurize) by Michael Kaminsky
+
+ - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)
+
+ - [`js2image`](https://github.com/xinyu198736/image-to-js#readme) by yutou
+
+ - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) by Hans Kristian Flaatten
+
+ - [`salestock-cli`](https://npmjs.com/package/salestock-cli) by Muhammad Mustadi
+
+ - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)
+
+## License
+
+[MIT][license] © [Ionică Bizău][website]
+
+[paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
+[donate-now]: http://i.imgur.com/6cMbHOC.png
+
+[license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2014#license-mit
+[website]: http://ionicabizau.net
+[contributing]: /CONTRIBUTING.md
+[docs]: /DOCUMENTATION.md

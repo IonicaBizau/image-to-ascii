@@ -1,5 +1,6 @@
 *.swp
+*.swo
 *~
 *.log
 node_modules
-test/out.jpeg
+example/out.jpeg
