@@ -30,16 +30,6 @@
     "url": "https://github.com/IonicaBizau/image-to-ascii/issues"
   },
   "homepage": "https://github.com/IonicaBizau/image-to-ascii",
-  "dependencies": {
-    "couleurs": "^5.0.0",
-    "gm": "^1.18.1",
-    "lwipify": "^1.3.0",
-    "one-by-one": "^2.2.1",
-    "pngjs": "0.4.0",
-    "request": "^2.61.0",
-    "tmp": "0.0.27",
-    "ul": "^5.2.1"
-  },
   "devDependencies": {},
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
@@ -104,5 +94,13 @@
         }
       }
     ]
+  },
+  "dependencies": {
+    "asciify-pixel-matrix": "^1.0.0",
+    "compute-size": "^1.0.1",
+    "image-parser": "^1.0.0",
+    "imgpx": "^1.0.2",
+    "one-by-one": "^3.1.0",
+    "ul": "^5.2.1"
   }
 }
