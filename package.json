@@ -101,6 +101,7 @@
     "image-parser": "^1.0.0",
     "imgpx": "^1.0.2",
     "one-by-one": "^3.1.0",
+    "terminal-char-width": "^1.0.0",
     "ul": "^5.2.1"
   }
 }
