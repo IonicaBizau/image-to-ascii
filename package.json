@@ -33,14 +33,14 @@
   "devDependencies": {},
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
-    "ex_img": "http://i.imgur.com/sjowkpL.png",
+    "ex_img": "http://i.imgur.com/Om8G7dZ.png",
     "show_installation": false,
     "installation": [
       {
         "h2": "Installation"
       },
       {
-        "p": "Install [Graphics Magick](http://www.graphicsmagick.org/)."
+        "p": "It's recommended to install [Graphics Magick](http://www.graphicsmagick.org/). If it's not installed, the library will automagically try to install [`lwip`](https://www.npmjs.com/package/lwip) by compiling the C/C++ stuff."
       },
       {
         "code": {
@@ -55,6 +55,8 @@
             "# OS X",
             "$ brew install graphicsmagick",
             "",
+            "# Windows users can install the binaries from http://www.graphicsmagick.org/",
+            "...or using the command line:",
             "# Chocolatey (package manager for Windows)",
             "# (Restart of cmd/PowerShell is required)",
             "$ choco install graphicsmagick"
@@ -67,7 +69,7 @@
       {
         "code": {
           "language": "sh",
-          "content": "$ npm i image-to-ascii"
+          "content": "$ npm i --save image-to-ascii"
         }
       }
     ],
