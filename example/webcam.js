@@ -1,7 +1,9 @@
 // Dependencies
-var ImageToAscii = require("../lib");
+const imageToAscii = require("../lib");
 
 // Convert to ascii this image
-ImageToAscii(__dirname + "/out.jpeg", function(err, converted) {
+imageToAscii(`${__dirname}/out.jpeg`, {
+    bg: true
+}, (err, converted) => {
     console.log(err || converted);
 });
