@@ -146,7 +146,7 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)
 
- - [`ick`](https://github.com/nteract/ick#readme) by Kyle Kelley
+ - [`ick`](https://github.com/nteract/ick#readme) by [nteract devs](https://github.com/nteract)
 
  - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) by yutou
 
