@@ -33,11 +33,11 @@ Then, you can install this package:
 $ npm i --save image-to-ascii
 ```
 
-## Example
+## :clipboard: Example
+
+        
 
 ```js
-"use strict";
-
 // Dependencies
 const imageToAscii = require("image-to-ascii");
 
@@ -53,6 +53,7 @@ imageToAscii("https://octodex.github.com/images/privateinvestocat.jpg", {
     console.log(err || converted);
 });
 ```
+    
 
 In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`
 
@@ -67,9 +68,9 @@ To run the script just use:
 sh webcam.sh
 ```
 
-## Documentation
-
-### `ImageToAscii(source, options, callback)`
+## :memo: Documentation
+        
+### `imageToAscii(source, options, callback)`
 Converts the provided image in ASCII art.
 
 #### Params
@@ -128,46 +129,33 @@ Converts the provided image in ASCII art.
     stringifier.
 - **Function** `callback`: The callback function.
 
-## How to contribute
+        
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
+## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - [`alphabet-cli`](https://github.com/joliveros/alphabet-cli#readme)
+ - [`alphabet-cli`](https://github.com/joliveros/alphabet-cli#readme)—undefined
+ - [`ascii-github`](https://npmjs.com/package/ascii-github)—GitHub CLI Client
+ - [`cli-github`](https://github.com/IonicaBizau/cli-github)—A fancy GitHub client for command line.
+ - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
+ - [`doomjs`](https://github.com/codezilla-it/doom#readme) (by Fabio Cencetti)—A bunch of modular gulp tasks
+ - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)—Gif animations in your terminal!
+ - [`ick`](https://github.com/nteract/ick#readme) (by Kyle Kelley)—Interactive Console Experiment
+ - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) (by yutou)—用js代码和图片，生成一段可以正常运行的图形化的js源代码
+ - [`imgurize`](https://github.com/mkaminsky11/imgurize) (by Michael Kaminsky)—an Imgur browser in the terminal
+ - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)—Octocats in terminal!
+ - [`js2image`](https://github.com/xinyu198736/image-to-js#readme) (by yutou)—用js代码和图片，生成一段可以正常运行的图形化的js源代码
+ - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) (by Hans Kristian Flaatten)—Command line client for interacting with TV programs from the Norwegian Broadcasting Corporation (NRK)
+ - [`salestock-cli`](https://npmjs.com/package/salestock-cli) (by Muhammad Mustadi)—salestock CLI app
+ - [`terminal-sidecar`](https://npmjs.com/package/terminal-sidecar) (by Kyle Kelley)—Jupyter sidecar in your terminal
+ - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)—The awesome power of command line is finally revealed.
 
- - [`ascii-github`](https://npmjs.com/package/ascii-github)
-
- - [`cli-github`](https://github.com/IonicaBizau/cli-github)
-
- - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)
-
- - [`doomjs`](https://github.com/codezilla-it/doom#readme) by Fabio Cencetti
-
- - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)
-
- - [`ick`](https://github.com/nteract/ick#readme) by [nteract devs](https://github.com/nteract)
-
- - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) by yutou
-
- - [`imgurize`](https://github.com/mkaminsky11/imgurize) by Michael Kaminsky
-
- - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)
-
- - [`js2image`](https://github.com/xinyu198736/image-to-js#readme) by yutou
-
- - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) by Hans Kristian Flaatten
-
- - [`salestock-cli`](https://npmjs.com/package/salestock-cli) by Muhammad Mustadi
-
- - [`terminal-sidecar`](https://npmjs.com/package/terminal-sidecar) by Kyle Kelley
-
- - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)
-
-## License
-
+## :scroll: License
+    
 [MIT][license] © [Ionică Bizău][website]
-
+    
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
