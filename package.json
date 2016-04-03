@@ -34,45 +34,7 @@
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
     "ex_img": "http://i.imgur.com/Om8G7dZ.png",
-    "show_installation": false,
-    "installation": [
-      {
-        "h2": "Installation"
-      },
-      {
-        "p": "It's recommended to install [Graphics Magick](http://www.graphicsmagick.org/). If it's not installed, the library will automagically try to install [`lwip`](https://www.npmjs.com/package/lwip) by compiling the C/C++ stuff."
-      },
-      {
-        "code": {
-          "language": "sh",
-          "content": [
-            "# Ubuntu",
-            "$ sudo apt-get install graphicsmagick",
-            "",
-            "# Fedora",
-            "$ sudo dnf install GraphicsMagick",
-            "",
-            "# OS X",
-            "$ brew install graphicsmagick",
-            "",
-            "# Windows users can install the binaries from http://www.graphicsmagick.org/",
-            "...or using the command line:",
-            "# Chocolatey (package manager for Windows)",
-            "# (Restart of cmd/PowerShell is required)",
-            "$ choco install graphicsmagick"
-          ]
-        }
-      },
-      {
-        "p": "Then, you can install this package:"
-      },
-      {
-        "code": {
-          "language": "sh",
-          "content": "$ npm i --save image-to-ascii"
-        }
-      }
-    ],
+    "installation": "Check out the [INSTALLTION.md](/INSTALLTION.md) guide for more information.",
     "example": [
       {
         "p": "In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`"
@@ -95,7 +57,8 @@
           "content": "sh webcam.sh"
         }
       }
-    ]
+    ],
+    "cli": "image-to-ascii-cli"
   },
   "dependencies": {
     "asciify-pixel-matrix": "^1.0.0",

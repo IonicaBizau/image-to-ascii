@@ -6,32 +6,16 @@
 
 [![image-to-ascii](http://i.imgur.com/Om8G7dZ.png)](#)
 
-## Installation
-
-It's recommended to install [Graphics Magick](http://www.graphicsmagick.org/). If it's not installed, the library will automagically try to install [`lwip`](https://www.npmjs.com/package/lwip) by compiling the C/C++ stuff.
-
-```sh
-# Ubuntu
-$ sudo apt-get install graphicsmagick
-
-# Fedora
-$ sudo dnf install GraphicsMagick
-
-# OS X
-$ brew install graphicsmagick
-
-# Windows users can install the binaries from http://www.graphicsmagick.org/
-...or using the command line:
-# Chocolatey (package manager for Windows)
-# (Restart of cmd/PowerShell is required)
-$ choco install graphicsmagick
-```
-
-Then, you can install this package:
-
+## :cloud: Installation
+    
 ```sh
 $ npm i --save image-to-ascii
 ```
+
+            
+:bulb: **ProTip**: You can install the [cli version of this module](http://github.com/IonicaBizau/image-to-ascii-cli) by running `npm i -g image-to-ascii-cli`
+            
+Check out the [INSTALLTION.md](/INSTALLTION.md) guide for more information.
 
 ## :clipboard: Example
 
@@ -143,6 +127,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`doomjs`](https://github.com/codezilla-it/doom#readme) (by Fabio Cencetti)—A bunch of modular gulp tasks
  - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)—Gif animations in your terminal!
  - [`ick`](https://github.com/nteract/ick#readme) (by Kyle Kelley)—Interactive Console Experiment
+ - [`image-to-ascii-cli`](https://github.com/IonicaBizau/image-to-ascii-cli#readme)—View images in text format, in your terminal.
  - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) (by yutou)—用js代码和图片，生成一段可以正常运行的图形化的js源代码
  - [`imgurize`](https://github.com/mkaminsky11/imgurize) (by Michael Kaminsky)—an Imgur browser in the terminal
  - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)—Octocats in terminal!
