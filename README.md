@@ -72,11 +72,11 @@ Converts the provided image in ASCII art.
     [`compute-size`](https://github.com/IonicaBizau/compute-size):
     - `screen_size` (Object): The screen size (defaults to terminal width
     and height):
-     - `width` (Number): The screen width.
-     - `height` (Number): The screen height.
+        - `width` (Number): The screen width.
+        - `height` (Number): The screen height.
     - `px_size` (Object): The pixel size.
-     - `width` (default: `1`)
-     - `height` (default: `1`)
+        - `width` (default: `1`)
+        - `height` (default: `1`)
     - `preserve_aspect_ratio` (Boolean): If `false`, the aspect ratio will
       not be preserved (default: `true`).
     - `fit_screen` (Boolean): If `false`, the result size will not fit to
