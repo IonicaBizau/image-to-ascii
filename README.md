@@ -3,7 +3,7 @@
 
 # image-to-ascii
 
- [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![AMA](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+ [![Patreon](https://img.shields.io/badge/Support%20me%20on-Patreon-%23e6461a.svg)][paypal-donations] [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![AMA](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > A Node.JS module that converts images to ASCII art.
 
@@ -122,15 +122,26 @@ Converts the provided image in ASCII art.
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+## :moneybag: Donations
+
+Another way to support the development of my open-source modules is
+to [set up a recurring donation, via Patreon][patreon]. :rocket:
+
+[PayPal donations][paypal-donations] are appreciated too! Each dollar helps.
+
+Thanks! :heart:
+
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
 
  - [`alphabet-cli`](https://github.com/joliveros/alphabet-cli#readme)—undefined
  - [`ascii-github`](https://npmjs.com/package/ascii-github)—GitHub CLI Client
+ - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
  - [`cli-github`](https://github.com/IonicaBizau/cli-github)—A fancy GitHub client for command line.
  - [`doomjs`](https://github.com/codezilla-it/doom#readme) (by Fabio Cencetti)—A bunch of modular gulp tasks
  - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)—Gif animations in your terminal!
+ - [`goteem`](https://npmjs.com/package/goteem) (by Austin Kelleher, a@alk.im)—goteem
  - [`ick`](https://github.com/nteract/ick#readme) (by Kyle Kelley)—Interactive Console Experiment
  - [`image-to-ascii-cli`](https://github.com/IonicaBizau/image-to-ascii-cli#readme)—View images in text format, in your terminal.
  - [`image-to-js`](https://github.com/xinyu198736/image-to-js#readme) (by yutou)—用js代码和图片，生成一段可以正常运行的图形化的js源代码
@@ -138,10 +149,13 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`imgurize`](https://github.com/mkaminsky11/imgurize) (by Michael Kaminsky)—an Imgur browser in the terminal
  - [`joctodex`](https://github.com/IonicaBizau/joctodex#readme)—Octocats in terminal!
  - [`js2image`](https://github.com/xinyu198736/image-to-js#readme) (by yutou)—用js代码和图片，生成一段可以正常运行的图形化的js源代码
+ - [`kayak-inside`](https://github.com/stewartulm/inside#readme) (by Stewart Ulm)—Team Directory
  - [`mdy`](https://github.com/IonicaBizau/mdy#readme)—View markdown files in the command line with ANSI styled images.
- - [`meetup-randomizer`](https://github.com/durancristhian/meetup-randomizer#readme) (by Cristhian Javier Duran)—Aplicación de consola que en base a una URL de un evento de meetup elige un ganador
+ - [`nobro`](https://github.com/marsch/nodarkside#readme) (by Mario Scheliga)—Prevent brothers and sisters from falling to the dark side by robbing their npm-workflow virginity
  - [`node.cobol`](https://github.com/IonicaBizau/node.cobol#readme)—Node.js bridge for COBOL which allows you to run Node.js code from COBOL.
+ - [`noslide-js`](https://github.com/crazyguitar/noslide.js#readme) (by fly)—A Simple Terminal slide tool
  - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) (by Hans Kristian Flaatten)—Command line client for interacting with TV programs from the Norwegian Broadcasting Corporation (NRK)
+ - [`path-cli`](https://npmjs.com/package/path-cli) (by Muhammad Mustadi)—[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
  - [`salestock-cli`](https://npmjs.com/package/salestock-cli) (by Muhammad Mustadi)—salestock CLI app
  - [`terminal-sidecar`](https://npmjs.com/package/terminal-sidecar) (by Kyle Kelley)—Jupyter sidecar in your terminal
  - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)—The awesome power of command line is finally revealed.
@@ -150,6 +164,7 @@ If you are using this library in one of your projects, add it in this list. :spa
 
 [MIT][license] © [Ionică Bizău][website]
 
+[patreon]: https://www.patreon.com/ionicabizau
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
