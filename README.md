@@ -18,7 +18,7 @@ $ npm i --save image-to-ascii
 
 :bulb: **ProTip**: You can install the [cli version of this module](http://github.com/IonicaBizau/image-to-ascii-cli) by running `npm i -g image-to-ascii-cli`
 
-Check out the [INSTALLTION.md](/INSTALLTION.md) guide for more information.
+Check out the [INSTALLATION.md](INSTALLATION.md) guide for more information.
 
 ## :clipboard: Example
 
