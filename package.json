@@ -35,7 +35,7 @@
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
     "ex_img": "http://i.imgur.com/Om8G7dZ.png",
-    "installation": "Check out the [INSTALLTION.md](/INSTALLTION.md) guide for more information.",
+    "installation": "Check out the [INSTALLATION.md](INSTALLATION.md) guide for more information.",
     "example": [
       {
         "p": "In order to run the `webcam.sh` provided in the `example` folder, you will also need streamer. The script uses streamer to make webcam pictures and converts them into ASCII art using the `webcam.js`"
