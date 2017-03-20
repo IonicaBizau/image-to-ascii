@@ -1,6 +1,6 @@
 {
   "name": "image-to-ascii",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "A Node.JS module that converts images to ASCII art.",
   "main": "lib/index.js",
   "directories": {
@@ -19,7 +19,7 @@
     "png",
     "node"
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "author": "Ionică Bizău <bizauionica@gmail.com> (https://ionicabizau.net)",
   "contributors": [
     "Eric Baer <me@ericbaer.com>",
     "ComFreek <comfreek@outlook.com>",
@@ -74,12 +74,11 @@
     "bin/",
     "app/",
     "lib/",
-    "build/",
     "dist/",
     "src/",
+    "scripts/",
     "resources/",
     "menu/",
-    "scripts/",
     "cli.js",
     "index.js"
   ]
