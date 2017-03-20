@@ -3,7 +3,7 @@
 
 # image-to-ascii
 
- [![Patreon](https://img.shields.io/badge/Support%20me%20on-Patreon-%23e6461a.svg)][patreon] [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![AMA](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+ [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal_donate]][paypal-donations] [![Version](https://img.shields.io/npm/v/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii) [![Downloads](https://img.shields.io/npm/dt/image-to-ascii.svg)](https://www.npmjs.com/package/image-to-ascii)
 
 > A Node.JS module that converts images to ASCII art.
 
@@ -123,25 +123,37 @@ Converts the provided image in ASCII art.
 Have an idea? Found a bug? See [how to contribute][contributing].
 
 
-## :moneybag: Donations
+## :sparkling_heart: Support my projects
 
-Another way to support the development of my open-source modules is
-to [set up a recurring donation, via Patreon][patreon]. :rocket:
+I open-source almost everything I can, and I try to reply everyone needing help using these projects. Obviously,
+this takes time. You can integrate and use these projects in your applications *for free*! You can even change the source code and redistribute (even resell it).
 
-[PayPal donations][paypal-donations] are appreciated too! Each dollar helps.
+However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it:
+
+ - Starring and sharing the projects you like :rocket:
+ - [![PayPal][badge_paypal]][paypal-donations]—You can make one-time donations via PayPal. I'll probably buy a ~~coffee~~ tea. :tea:
+ - [![Support me on Patreon][badge_patreon]][patreon]—Set up a recurring monthly donation and you will get interesting news about what I'm doing (things that I don't share with everyone).
+ - **Bitcoin**—You can send me bitcoins at this address (or scanning the code below): `1P9BRsmazNQcuyTxEqveUsnf5CERdq35V6`
+
+    ![](https://i.imgur.com/z6OQI95.png)
 
 Thanks! :heart:
+
 
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
 
+ - [`aceituna`](https://github.com/davepgreene/aceituna#readme) (by Dave Greene)—Drool worthy
  - [`alphabet-cli`](https://github.com/joliveros/alphabet-cli#readme)—undefined
  - [`ascii-github`](https://npmjs.com/package/ascii-github)—GitHub CLI Client
+ - [`bing-cli`](https://github.com/scottbea/bing-cli#readme) (by Scott Beaudreau)—Use Bing Search in the terminal via command line
+ - [`bronos`](https://github.com/kswilster/bronos#readme) (by Keith Williams)—A sonos cli for bros
  - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
  - [`cli-github`](https://github.com/IonicaBizau/cli-github)—A fancy GitHub client for command line.
  - [`doomjs`](https://github.com/codezilla-it/doom#readme) (by Fabio Cencetti)—A bunch of modular gulp tasks
  - [`gif-cli`](https://github.com/IonicaBizau/gif-cli)—Gif animations in your terminal!
+ - [`gongxi`](https://github.com/clonn/gongxi) (by clonn)—恭喜系列 cli
  - [`goteem`](https://npmjs.com/package/goteem) (by Austin Kelleher, a@alk.im)—goteem
  - [`ick`](https://github.com/nteract/ick#readme) (by Kyle Kelley)—Interactive Console Experiment
  - [`image-to-ascii-cli`](https://github.com/IonicaBizau/image-to-ascii-cli#readme)—View images in text format, in your terminal.
@@ -157,6 +169,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`noslide-js`](https://github.com/crazyguitar/noslide.js#readme) (by fly)—A Simple Terminal slide tool
  - [`nrk-tv-cli`](https://github.com/Starefossen/nrk-tv-cli#readme) (by Hans Kristian Flaatten)—Command line client for interacting with TV programs from the Norwegian Broadcasting Corporation (NRK)
  - [`path-cli`](https://npmjs.com/package/path-cli) (by Muhammad Mustadi)—[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+ - [`protractor-screenshoter-plugin`](https://github.com/azachar/protractor-screenshoter-plugin) (by Andrej Zachar)—A jasmine2 protractor plugin that captures for each browser instance a screenshot and browsers' console logs. The snapshot is made optionally for each expect or spec. Plugins comes with a beautiful angular based analytics tool to visually check and fix te
  - [`salestock-cli`](https://npmjs.com/package/salestock-cli) (by Muhammad Mustadi)—salestock CLI app
  - [`terminal-sidecar`](https://npmjs.com/package/terminal-sidecar) (by Kyle Kelley)—Jupyter sidecar in your terminal
  - [`tmuxos`](https://github.com/TmuxOS/TmuxOS)—The awesome power of command line is finally revealed.
@@ -165,11 +178,16 @@ If you are using this library in one of your projects, add it in this list. :spa
 
 [MIT][license] © [Ionică Bizău][website]
 
+[badge_patreon]: http://ionicabizau.github.io/badges/patreon.svg
+[badge_amazon]: http://ionicabizau.github.io/badges/amazon.svg
+[badge_paypal]: http://ionicabizau.github.io/badges/paypal.svg
+[badge_paypal_donate]: http://ionicabizau.github.io/badges/paypal_donate.svg
 [patreon]: https://www.patreon.com/ionicabizau
+[amazon]: http://amzn.eu/hRo9sIZ
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
-[license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2014#license-mit
-[website]: http://ionicabizau.net
+[license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(https%3A%2F%2Fionicabizau.net)&year=2014#license-mit
+[website]: https://ionicabizau.net
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md
