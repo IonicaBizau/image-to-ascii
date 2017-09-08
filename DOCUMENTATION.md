@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 Converts the provided image in ASCII art.
 
 #### Params
+
 - **String** `source`: The path/url to the image.
 - **Object|String** `options`: The path to the image or an object containing the following fields:
 
