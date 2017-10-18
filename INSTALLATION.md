@@ -9,6 +9,9 @@ $ sudo apt-get install graphicsmagick
 # Fedora
 $ sudo dnf install GraphicsMagick
 
+# CentOS / RHEL
+$ sudo yum install --enablerepo epel GraphicsMagick
+
 # OS X
 $ brew install graphicsmagick
 
