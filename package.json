@@ -45,7 +45,10 @@
           "language": "sh",
           "content": [
             "# Ubuntu",
-            "$ sudo apt-get install streamer"
+            "$ sudo apt-get install streamer",
+            "",
+            "# CentOS / RHEL",
+            "$ sudo yum install --enablerepo epel GraphicsMagick"
           ]
         }
       },
