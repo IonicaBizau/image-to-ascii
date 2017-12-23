@@ -7,7 +7,7 @@ Converts the provided image in ASCII art.
 
 #### Params
 
-- **String** `source`: The path/url to the image.
+- **String|Buffer** `source`: The path/url to the image or a Buffer object.
 - **Object|String** `options`: The path to the image or an object containing the following fields:
 
  **Size Options**:
