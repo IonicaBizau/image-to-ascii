@@ -14,11 +14,15 @@
 ## :cloud: Installation
 
 ```sh
-$ npm i --save image-to-ascii
+# Using npm
+npm install --save image-to-ascii
+
+# Using yarn
+yarn add image-to-ascii
 ```
 
 
-:bulb: **ProTip**: You can install the [cli version of this module](http://github.com/IonicaBizau/image-to-ascii-cli) by running `npm i -g image-to-ascii-cli`
+:bulb: **ProTip**: You can install the [cli version of this module](http://github.com/IonicaBizau/image-to-ascii-cli) by running `npm install --global image-to-ascii-cli` (or `yarn global add image-to-ascii-cli`).
 
 Check out the [INSTALLATION.md](INSTALLATION.md) guide for more information.
 
