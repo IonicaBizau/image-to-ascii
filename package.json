@@ -1,6 +1,6 @@
 {
   "name": "image-to-ascii",
-  "version": "3.0.14",
+  "version": "3.1.0",
   "description": "A Node.JS module that converts images to ASCII art.",
   "main": "lib/index.js",
   "directories": {
@@ -31,7 +31,6 @@
     "url": "https://github.com/IonicaBizau/image-to-ascii/issues"
   },
   "homepage": "https://github.com/IonicaBizau/image-to-ascii",
-  "devDependencies": {},
   "blah": {
     "h_img": "http://i.imgur.com/pKydY5P.png",
     "ex_img": "http://i.imgur.com/Om8G7dZ.png",
@@ -65,13 +64,13 @@
     "cli": "image-to-ascii-cli"
   },
   "dependencies": {
-    "asciify-pixel-matrix": "^1.0.0",
-    "compute-size": "^1.0.1",
-    "image-parser": "^1.0.0",
-    "imgpx": "^1.0.2",
-    "one-by-one": "^3.1.0",
-    "terminal-char-width": "^1.0.0",
-    "ul": "^5.2.1"
+    "asciify-pixel-matrix": "^1.0.14",
+    "compute-size": "^1.0.13",
+    "image-parser": "^1.2.8",
+    "imgpx": "^1.0.13",
+    "one-by-one": "^3.2.8",
+    "terminal-char-width": "^1.0.10",
+    "ul": "^5.2.15"
   },
   "files": [
     "bin/",
