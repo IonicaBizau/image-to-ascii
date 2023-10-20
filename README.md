@@ -258,37 +258,42 @@ Thanks! :heart:
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - `gif-cli`
- - `aceituna`
- - `gongxi`
- - `noslide-js`
- - `sprite-cli-js`
- - `terminal-sidecar`
- - `@radic/cli`
- - `tmuxos`
- - `ascii-github`
- - `alphabet-cli`
- - `nrk-tv-cli`
- - `kayak-inside`
- - `nobro`
- - `goteem`
- - `imgurize`
- - `doomjs`
- - `image-to-js`
- - `salestock-cli`
- - `joctodex`
- - `path-cli`
  - `ascii-video`
  - `js2image`
- - `moltres-cli`
- - `image-to-ascii-cli`
- - `img-to-svg`
+ - `gif-cli`
+ - `sprite-cli-js`
+ - `nobro`
  - `mdy`
- - `node.cobol`
- - `bing-cli`
+ - `noslide-js`
+ - `pictoprime`
  - `ick`
+ - `salestock-cli`
+ - `doomjs`
  - `cli-emoji`
+ - `gongxi`
+ - `ascii-github`
+ - `adventure-cli`
+ - `alphabet-cli`
+ - `moltres-cli`
+ - `nrk-tv-cli`
+ - `node.cobol`
+ - `pokedex-cli-tt`
+ - `path-cli`
+ - `terminal-sidecar`
+ - `bing-cli`
+ - `@radic/cli`
+ - `imgurize`
+ - `joctodex`
+ - `tmuxos`
+ - `jacky`
  - `cli-github`
+ - `provisiontui-david-keng`
+ - `image-to-ascii-cli`
+ - `image-to-js`
+ - `goteem`
+ - `core-node-pokemon`
+ - `img-to-svg`
+ - `aceituna`
 
 
 
