@@ -3,6 +3,7 @@
   "version": "3.2.0",
   "description": "A Node.JS module that converts images to ASCII art.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "example": "example"
   },
@@ -24,7 +25,8 @@
     "Eric Baer <me@ericbaer.com>",
     "ComFreek <comfreek@outlook.com>",
     "Szabo Cristian",
-    "Aleen <aleen42@vip.qq.com>"
+    "Aleen <aleen42@vip.qq.com>",
+    "in-ch <sxin2949@naver.com>"
   ],
   "license": "MIT",
   "bugs": {
