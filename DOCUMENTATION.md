@@ -61,4 +61,3 @@ Converts the provided image in ASCII art.
     the `options` in the arguments. Use this option to implement your own
     stringifier.
 - **Function** `callback`: The callback function.
-
